@@ -10,24 +10,27 @@
                 <input type="checkbox" name="title" value=<%="#{title.id}"%>><%=%"#{title.name}"%><br>
             <% end %>
         </div>
-        <div>
-            <label>Create New Title</label>
-            <input  name="title" type="text">
-        </div>
+        
         <div>
             <label>Landmarks</label><br>
             <% @landmarks.each do |landmark| %>
-                <input type="checkbox" name="title" value=<%="#{landmark.id}"%>><%=%"#{landmark.name}"%><br>
+                <input type="checkbox" name="landmarks[]" value=<%="#{landmark.id}"%>><%=%"#{landmark.name}"%><br>
             <% end %>
         </div>
         <div>
             <label>Create New Landmark</label><br>
             <label>Name</label>
-            <input  name="landmark" type="text">
+            <input  name="name" type="text">
             <label>Year</label>
-            <input  name="year" type="text">
+            <input  name="year" type="text"> 
         <div>
         <input type="submit" value="Create New Figure">
     </form>
 
 </div>
+
+
+        <!--<div>
+            <label>Create New Title</label>
+            <input  name="title" type="text">
+        </div>-->

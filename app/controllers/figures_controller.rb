@@ -11,8 +11,12 @@ class FiguresController < ApplicationController
     erb :new
   end
   post '/figures' do
-    # binding.pry
-    Figure.create(params)
-
+    binding.pry
+    figure = Figure.create(name: params[:figure], title_ids: params[:title], landmark_ids: params[:landmarks])
+    if (params["name"] != "")
+      new_landmark = Landmark.create(name: params[:name], year_completed: params[:year].to_i)
+      figure.landmarks << new_landmark
+    end
+    redirect '/figures'
   end
 end
